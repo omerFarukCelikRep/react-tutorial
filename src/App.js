@@ -1,24 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import SelectorSample from "./cssSamples/SelectorSample";
+import About from "./routerSample/About";
+import Contact from "./routerSample/Contact";
+import EmployeeDetails from "./routerSample/EmployeeDetails";
+import Employees from "./routerSample/Employees";
+import Home from "./routerSample/Home";
+import NoMatch from "./routerSample/NoMatch";
+import CustomerList from "./uygulama3/CustomerList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <ul>
+          <li>
+            <Link to="/">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/employees">Employee</Link>
+          </li>
+          <li>
+            <Link to="/customers">customers</Link>
+          </li>
+          <li>
+            <Link to="/selectorsample">Css Selector</Link>
+          </li>
+        </ul>
+
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+          <Route exact path="/employees">
+            <Employees />
+          </Route>
+          <Route path="/employees/:id">
+            <EmployeeDetails />
+          </Route>
+          <Route path="/customers">
+            <CustomerList />
+          </Route>
+          <Route exact path="/selectorsample">
+            <SelectorSample />
+          </Route>
+          <Route path="*">
+            <NoMatch />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 

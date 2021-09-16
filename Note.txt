@@ -1,0 +1,3 @@
+- Component isimleri Büyük harfle başlar
+-rfce kısayolu
+- ES7 
