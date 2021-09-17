@@ -1,3 +1,14 @@
 - Component isimleri Büyük harfle başlar
 -rfce kısayolu
 - ES7 
+
+-Folder Structre
+* env => api url gibi çevre değişkenleri
+* constants => enumlar gibi
+* service, manager, request => api ye istek atacak fonksiyonlarım var
+* assets => img, css, vb.
+* utils => helper fonksiyonlar
+* store => context, redux, vb store yapıları
+* hooks => custom hooklar
+* components => shared components => productList, categoryList, kendi özel button larım, alertlerim vb.
+* pages, views 
